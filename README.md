@@ -1,26 +1,31 @@
-# Ember-cli-deploy-git
+# ember-cli-deploy-git
 
-This README outlines the details of collaborating on this Ember addon.
+This is an [ember-cli-deploy](http://ember-cli.github.io/ember-cli-deploy/) plugin for deploying your built application to a git branch. It's particularly handy for deploying to GitHub Pages.
+
+If you have a recent version of git that supports `git worktree`, and you're deploying to the same repo you're working in, we automatically use `git worktree` to avoid any extra cloning.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+`ember install ember-cli-deploy ember-cli-deploy-build ember-ci-deploy-git`
 
-## Running
+## Configuration
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+In `config/deploy.js`, (which `ember-cli-deploy` will helpfully generate for you), you can pass the following options:
 
-## Running Tests
+ - `branch`: The branch that we will deploy to. It must already exist. Defaults to `"gh-pages"`
+ - `repo`: The repo that we will deploy to. It defaults to the value of your containing repo's `origin` remote.
+ - `worktreePath`: path where we will create/update a working tree to manipulate the deployment branch. Defaults to `../deploy-${project.name()}`, relative to your project.
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+A complete example:
 
-## Building
+```js
+ENV.git = {
+  repo: 'git@github.com:ef4/ember-cli-deploy-git.git',
+  branch: 'deploys',
+  worktreePath: '/tmp/ef4-deploy'
+};
 
-* `ember build`
+```
+## Usage
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+`ember deploy production`
