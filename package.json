@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-deploy-git",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "ember-cli-deploy plugin for uploading to a git branch",
   "directories": {
     "doc": "doc",
