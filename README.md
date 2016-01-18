@@ -28,7 +28,7 @@ ENV.git = {
 ```
 ## Usage
 
-### Github Pages First-TimeSetup
+### Github Pages First-Time Setup
 
 1. Make sure the branch named `gh-pages` exists. If it doesn't, you can do `git branch --orphan gh-pages; git commit --allow-empty; git push -u origin gh-pages`.
 
