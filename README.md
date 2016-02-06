@@ -6,7 +6,7 @@ If you have a recent version of git that supports `git worktree`, and you're dep
 
 ## Installation
 
-`ember install ember-cli-deploy ember-cli-deploy-build ember-ci-deploy-git`
+`ember install ember-cli-deploy ember-cli-deploy-build ember-cli-deploy-git`
 
 ## Configuration
 
