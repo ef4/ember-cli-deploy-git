@@ -24,8 +24,8 @@ ENV.git = {
   branch: 'deploys',
   worktreePath: '/tmp/ef4-deploy'
 };
-
 ```
+
 ## Usage
 
 ### Github Pages First-Time Setup
@@ -34,10 +34,12 @@ ENV.git = {
 
 2. Configure your application to run correctly in the Github environment by setting these things in your `config/environment.js`:
 
-    if (environment === 'production') {
-      ENV.baseURL = '/your-repo-name';
-      ENV.locationType = 'hash';
-    }
+```js
+if (environment === 'production') {
+  ENV.baseURL = '/your-repo-name';
+  ENV.locationType = 'hash';
+}
+```
 
 
 ### How to Deploy
