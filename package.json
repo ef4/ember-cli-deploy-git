@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-deploy-git",
-  "version": "0.1.0",
-  "description": "ember-cli-deploy plugin for uploading to a git branch",
+  "version": "1.0.0",
+  "description": "a deploy plugin for uploading to git, including GitHub Pages.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -23,7 +23,9 @@
   },
   "keywords": [
     "ember-addon",
-    "ember-cli-deploy-plugin"
+    "ember-cli-deploy-plugin",
+    "git",
+    "github pages"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.5",
