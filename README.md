@@ -14,7 +14,8 @@ In `config/deploy.js`, (which `ember-cli-deploy` will helpfully generate for you
 
  - `branch`: The branch that we will deploy to. It must already exist. Defaults to `"gh-pages"`
  - `repo`: The repo that we will deploy to. It defaults to the value of your containing repo's `origin` remote.
- - `worktreePath`: path where we will create/update a working tree to manipulate the deployment branch. Defaults to `../deploy-${project.name()}`, relative to your project.
+ - `worktreePath`: Path where we will create/update a working tree to manipulate the deployment branch. Defaults to `../deploy-${project.name()}`, relative to your project.
+ - `commitMessage`: Message to use when committing the deployment, where %@ is replaced with the current git revision.
 
 A complete example:
 
@@ -22,7 +23,8 @@ A complete example:
 ENV.git = {
   repo: 'git@github.com:ef4/ember-cli-deploy-git.git',
   branch: 'deploys',
-  worktreePath: '/tmp/ef4-deploy'
+  worktreePath: '/tmp/ef4-deploy',
+  commitMessage: 'Deployed %@'
 };
 ```
 
