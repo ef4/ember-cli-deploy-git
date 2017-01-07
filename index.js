@@ -19,7 +19,8 @@ module.exports = {
               myRepo: myRepo,
               repo: pluginConfig.repo || myRepo,
               branch: pluginConfig.branch || 'gh-pages',
-              worktreePath: pluginConfig.worktreePath || defaultWorktree(context)
+              worktreePath: pluginConfig.worktreePath || defaultWorktree(context),
+              commitMessage: pluginConfig.commitMessage || 'Deployed %@'
             }
           };
         }).catch(showStderr(context.ui));
@@ -28,9 +29,9 @@ module.exports = {
         var d = context.gitDeploy;
         var distDir = context.distDir || path.join(context.project.root, 'dist');
         return git.prepareTree(d.worktreePath, d.myRepo, d.repo, d.branch)
-          .then(function(){
-            return git.replaceTree(d.worktreePath, distDir);
-          }).then(function(didCommit){
+          .then(function() {
+            return git.replaceTree(d.worktreePath, distDir, d.commitMessage);
+          }).then(function(didCommit) {
             if (didCommit) {
               return git.push(d.worktreePath, d.repo, d.branch);
             } else {
