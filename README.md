@@ -38,11 +38,12 @@ ENV.git = {
 
 ```js
 if (environment === 'production') {
-  ENV.baseURL = '/your-repo-name';
+  ENV.rootURL = '/your-repo-name';
   ENV.locationType = 'hash';
 }
 ```
 
+Note: If you're using Ember-CLI 2.6 or older, you should use `baseURL` instead of `rootURL` in the above code sample.
 
 ### How to Deploy
 
