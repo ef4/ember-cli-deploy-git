@@ -43,7 +43,7 @@ if (environment === 'production') {
 }
 ```
 
-Note: If you're using Ember-CLI 2.6 or older, you should use `baseURL` instead of `rootURL` in the above code sample.
+NOTE: If your application uses `baseURL`, please review the [deprecation details](https://emberjs.com/blog/2016/04/28/baseURL.html) and consider using rootURL instead. 
 
 ### How to Deploy
 
