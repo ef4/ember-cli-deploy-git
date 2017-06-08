@@ -43,7 +43,7 @@ if (environment === 'production') {
 }
 ```
 
-3. Add `demoURL` to your `package.json`'s `ember-addon` section to be picked up by https://emberobserver.com/:
+3. Add `demoURL` to your `package.json`'s `ember-addon` section to be picked up by https://www.emberaddons.com and https://emberobserver.com:
 
 ```js
 "ember-addon": {
