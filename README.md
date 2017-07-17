@@ -15,6 +15,7 @@ In `config/deploy.js`, (which `ember-cli-deploy` will helpfully generate for you
  - `branch`: The branch that we will deploy to. It must already exist. Defaults to `"gh-pages"`
  - `repo`: The repo that we will deploy to. It defaults to the value of your containing repo's `origin` remote.
  - `worktreePath`: Path where we will create/update a working tree to manipulate the deployment branch. Defaults to `../deploy-${project.name()}`, relative to your project.
+ - `destDir`: A directory within the given branch that we will deploy to. Defaults to the root of the repo.
  - `commitMessage`: Message to use when committing the deployment, where %@ is replaced with the current git revision.
 
 A complete example:
