@@ -14,12 +14,14 @@ module.exports = {
       configure: function(context) {
         var pluginConfig = context.config[this.name] || {};
         return getMyRepo(context).then(function(myRepo) {
+          var worktreePath = pluginConfig.worktreePath || defaultWorktree(context);
           return {
             gitDeploy: {
               myRepo: myRepo,
+              worktreePath: worktreePath,
+              destDir: path.resolve(worktreePath, pluginConfig.destDir || ''),
               repo: pluginConfig.repo || myRepo,
               branch: pluginConfig.branch || 'gh-pages',
-              worktreePath: pluginConfig.worktreePath || defaultWorktree(context),
               commitMessage: pluginConfig.commitMessage || 'Deployed %@'
             }
           };
@@ -30,7 +32,7 @@ module.exports = {
         var distDir = context.distDir || path.join(context.project.root, 'dist');
         return git.prepareTree(d.worktreePath, d.myRepo, d.repo, d.branch)
           .then(function() {
-            return git.replaceTree(d.worktreePath, distDir, d.commitMessage);
+            return git.replaceTree(d.destDir, distDir, d.commitMessage);
           }).then(function(didCommit) {
             if (didCommit) {
               return git.push(d.worktreePath, d.repo, d.branch);
