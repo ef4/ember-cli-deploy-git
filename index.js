@@ -27,13 +27,15 @@ module.exports = {
           };
         }).catch(showStderr(context.ui));
       },
+      prepare: function(context) {
+        var d = context.gitDeploy;
+        return git.prepareTree(d.worktreePath, d.myRepo, d.repo, d.branch);
+      },
       upload: function(context) {
         var d = context.gitDeploy;
         var distDir = context.distDir || path.join(context.project.root, 'dist');
-        return git.prepareTree(d.worktreePath, d.myRepo, d.repo, d.branch)
-          .then(function() {
-            return git.replaceTree(d.destDir, distDir, d.commitMessage);
-          }).then(function(didCommit) {
+        return git.replaceTree(d.destDir, distDir, d.commitMessage)
+          .then(function(didCommit) {
             if (didCommit) {
               return git.push(d.worktreePath, d.repo, d.branch);
             } else {

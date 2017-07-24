@@ -46,6 +46,10 @@ if (environment === 'production') {
 
 ** If you're using Ember-CLI 2.6 or older, [you will need to use `baseURL` instead of `rootURL`](https://emberjs.com/blog/2016/04/28/baseURL.html).**
 
+### Coordination With Other Plugins
+
+This plugin checks out the target branch during the `prepare` phase of the deploy, and writes the new build output there during the `upload` phase. Between those two phases, the location of this checkout is available at `context.gitDeploy.worktreePath` for other plugins that wish to pull information from the previous deployed commit.
+
 ### How to Deploy
 
 `ember deploy production`
