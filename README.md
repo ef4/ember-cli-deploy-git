@@ -44,6 +44,15 @@ if (environment === 'production') {
 }
 ```
 
+3. Add `demoURL` to your `package.json`'s `ember-addon` section to be picked up by https://www.emberaddons.com and https://emberobserver.com:
+
+```js
+"ember-addon": {
+  "configPath": "tests/dummy/config",
+  "demoURL": "http://your-user-name.github.io/your-repo-name"
+}
+```
+
 ** If you're using Ember-CLI 2.6 or older, [you will need to use `baseURL` instead of `rootURL`](https://emberjs.com/blog/2016/04/28/baseURL.html).**
 
 ### How to Deploy
