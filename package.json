@@ -31,7 +31,6 @@
     "ember-cli-babel": "^6.11.0",
     "ember-cli-deploy-plugin": "^0.2.9",
     "fs-extra": "^5.0.0",
-    "loader.js": "^4.1.0",
     "ncp": "^2.0.0",
     "rsvp": "^4.8.1"
   },
