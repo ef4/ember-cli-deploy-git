@@ -28,7 +28,7 @@
     "github pages"
   ],
   "dependencies": {
-    "ember-cli-babel": "^5.1.5",
+    "ember-cli-babel": "^6.11.0",
     "ember-cli-deploy-plugin": "^0.2.0",
     "fs-extra": "^4.0.0",
     "ncp": "^2.0.0",
