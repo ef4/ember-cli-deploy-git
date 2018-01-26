@@ -13,13 +13,13 @@
   },
   "repository": "https://github.com/ef4/ember-cli-deploy-git",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 4"
   },
   "author": "Edward Faulkner <ef@alum.mit.edu>",
   "license": "MIT",
   "devDependencies": {
-    "ember-cli": "1.13.12",
-    "ember-cli-dependency-checker": "^1.1.0"
+    "ember-cli": "2.18.1",
+    "ember-cli-dependency-checker": "^2.1.0"
   },
   "keywords": [
     "ember-addon",
@@ -28,11 +28,12 @@
     "github pages"
   ],
   "dependencies": {
-    "ember-cli-babel": "^5.1.5",
-    "ember-cli-deploy-plugin": "^0.2.0",
-    "fs-extra": "^4.0.0",
+    "ember-cli-babel": "^6.11.0",
+    "ember-cli-deploy-plugin": "^0.2.9",
+    "fs-extra": "^5.0.0",
+    "loader.js": "^4.1.0",
     "ncp": "^2.0.0",
-    "rsvp": "^3.1.0"
+    "rsvp": "^4.8.1"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
