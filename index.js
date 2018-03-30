@@ -29,6 +29,7 @@ module.exports = {
       },
       prepare: function(context) {
         var d = context.gitDeploy;
+        this.log("preparing git in " + d.worktreePath, { verbose: true });
         return git.prepareTree(d.worktreePath, d.myRepo, d.repo, d.branch);
       },
       upload: function(context) {
