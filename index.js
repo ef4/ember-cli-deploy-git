@@ -1,5 +1,4 @@
-/* jshint node: true */
-'use strict';
+"use strict";
 
 var DeployPluginBase = require('ember-cli-deploy-plugin');
 var path = require('path');
