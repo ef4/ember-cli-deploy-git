@@ -19,7 +19,12 @@
   "license": "MIT",
   "devDependencies": {
     "ember-cli": "2.18.1",
-    "ember-cli-dependency-checker": "^2.1.0"
+    "ember-cli-dependency-checker": "^2.1.0",
+    "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.18.2"
   },
   "keywords": [
     "ember-addon",
