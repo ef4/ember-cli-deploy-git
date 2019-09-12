@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-deploy-git",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "a deploy plugin for uploading to git, including GitHub Pages.",
   "directories": {
     "doc": "doc",
