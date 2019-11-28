@@ -53,7 +53,7 @@ if (environment === 'production') {
 }
 ```
 
-** If you're using Ember-CLI 2.6 or older, [you will need to use `baseURL` instead of `rootURL`](https://emberjs.com/blog/2016/04/28/baseURL.html).**
+**If you're using Ember-CLI 2.6 or older, [you will need to use `baseURL` instead of `rootURL`](https://emberjs.com/blog/2016/04/28/baseURL.html).**
 
 ### Coordination With Other Plugins
 
