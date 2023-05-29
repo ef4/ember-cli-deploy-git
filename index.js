@@ -7,13 +7,13 @@ var git = require("./lib/git");
 module.exports = {
   name: "ember-cli-deploy-git",
 
-  createDeployPlugin: function(options) {
+  createDeployPlugin: function (options) {
     var DeployPlugin = DeployPluginBase.extend({
       name: options.name,
-      configure: function(context) {
+      configure: function (context) {
         var pluginConfig = context.config[this.name] || {};
         return getMyRepo(context)
-          .then(function(myRepo) {
+          .then(function (myRepo) {
             var worktreePath =
               pluginConfig.worktreePath || defaultWorktree(context);
             return {
@@ -23,26 +23,26 @@ module.exports = {
                 destDir: path.resolve(worktreePath, pluginConfig.destDir || ""),
                 repo: pluginConfig.repo || myRepo,
                 branch: pluginConfig.branch || "gh-pages",
-                commitMessage: pluginConfig.commitMessage || "Deployed %@"
-              }
+                commitMessage: pluginConfig.commitMessage || "Deployed %@",
+              },
             };
           })
           .catch(showStderr(context.ui));
       },
-      prepare: function(context) {
+      prepare: function (context) {
         var d = context.gitDeploy;
         this.log("preparing git in " + d.worktreePath, { verbose: true });
         return git
           .prepareTree(d.worktreePath, d.myRepo, d.repo, d.branch)
           .catch(showStderr(context.ui));
       },
-      upload: function(context) {
+      upload: function (context) {
         var d = context.gitDeploy;
         var distDir =
           context.distDir || path.join(context.project.root, "dist");
         return git
           .replaceTree(d.destDir, distDir, d.commitMessage)
-          .then(function(didCommit) {
+          .then(function (didCommit) {
             if (didCommit) {
               return git.push(d.worktreePath, d.repo, d.branch);
             } else {
@@ -50,14 +50,14 @@ module.exports = {
             }
           })
           .catch(showStderr(context.ui));
-      }
+      },
     });
     return new DeployPlugin();
-  }
+  },
 };
 
 function showStderr(ui) {
-  return function(err) {
+  return function (err) {
     if (err.stderr) {
       ui.write(err.stderr);
     }

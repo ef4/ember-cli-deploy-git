@@ -19,13 +19,14 @@
   "author": "Edward Faulkner <ef@alum.mit.edu>",
   "license": "MIT",
   "devDependencies": {
-    "ember-cli": "2.18.1",
-    "ember-cli-dependency-checker": "^2.1.0",
-    "eslint": "^6.3.0",
-    "eslint-config-prettier": "^6.2.0",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "prettier": "^1.18.2"
+    "ember-cli": "4.12.1",
+    "ember-cli-dependency-checker": "^3.3.1",
+    "ember-source": "~3.28.8",
+    "eslint": "^8.41.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-n": "^16.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8"
   },
   "keywords": [
     "ember-addon",
@@ -34,10 +35,11 @@
     "github pages"
   ],
   "dependencies": {
-    "ember-cli-babel": "^6.11.0",
+    "ember-cli-babel": "^7.26.11",
     "ember-cli-deploy-plugin": "^0.2.9",
-    "fs-extra": "^5.0.0",
-    "rsvp": "^4.8.1"
+    "ember-cli-htmlbars": "^6.2.0",
+    "fs-extra": "^11.1.1",
+    "rsvp": "^4.8.5"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

@@ -1,6 +1,6 @@
-var EmberAddon = require("ember-cli/lib/broccoli/ember-addon"); // eslint-disable-line node/no-unpublished-require
+var EmberAddon = require("ember-cli/lib/broccoli/ember-addon"); // eslint-disable-line n/no-unpublished-require
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   var app = new EmberAddon(defaults, {
     // Add options here
   });
